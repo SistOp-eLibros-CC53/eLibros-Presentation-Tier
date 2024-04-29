@@ -7,8 +7,8 @@ export default {
       myCart: [],
       drawer: false,
       items: [
-        { label: "Home", to: `/home/${'xd'}` },
-        { label: "My Cart", to: `/home/${'xd'}/my_cart` },
+        { label: "Home", to: `/home/${this.$route.params.id}` },
+        { label: "My Cart", to: `/my_cart/${this.$route.params.id}` },
       ],
     };
   },
@@ -42,14 +42,14 @@ export default {
               @click="navigate"
           >{{item.label}}</pv-button>
         </router-link>
-        <i v-badge="2" class="pi pi-bell" style="font-size: 2rem" />
+        <pv-badge>{{this.myCart.length}}</pv-badge>
       </div>
     </template>
   </pv-toolbar>
   </header>
   <pv-sidebar v-model:visible="drawer"> </pv-sidebar>
   <RouterView
-      myCart:="myCart"
+      :myCart="myCart"
   />
   <footer>
     <pv-toolbar class="bg-primary">

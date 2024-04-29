@@ -1,54 +1,50 @@
 <script>
 import {BooksApiService} from "../services/books-api.service.js";
+import {useToast} from "primevue/usetoast";
 
 export default {
-  name: "books-list",
+  name: "myCart",
   props: ['myCart'],
   data() {
     return {
-      books: [],
-      book: {},
       myCart_local: this.$props.myCart,
+      books_in_cart: this.myCart_local,
       statuses: [
         {label: "Published", value: "published"},
         {label: "Unpublished", value: "unpublished"},
       ],
       booksApi: null,
+      toast: useToast(),
     };
   },
   created() {
     this.booksApi = new BooksApiService();
-    this.getBooks();
   },
   methods: {
-    // Fetch books
-    getBooks() {
-      this.booksApi.getAll()
-          .then(response => {
-            this.books = response.data;
-            console.log(response.data)
-          })
-          .catch(e => {
-            this.errors.push(e);
-          });
-    },
     getDisplayableTutorial(book) {
       return book;
     },
-    addBook(id) {
-      console.log(id);
-      this.myCart_local.push(this.books[id-1]);
+    removeBook(id) {
       console.log(this.myCart_local);
+      console.log(id);
+      this.myCart_local.splice(id, 1);
+      this.toast.add({ severity: 'error', summary: 'Book Removed', detail: 'Message Detail', life: 3000 });
     }
   }
 };
 </script>
 
 <template>
-  <pv-data-view :value="this.books">
+  <pv-toast/>
+  <router-link
+    :to="`/payment/${this.$route.params.id}`"
+  >
+    <pv-button class="mt-2 " label="Pay Now" severity="info"></pv-button>
+  </router-link>
+  <pv-data-view :value="this.myCart_local">
     <template #list="slotProps">
       <div class="grid grid-nogutter">
-        <div v-for="item in slotProps.items" :key="item.id" class="col-12">
+        <div v-for="(item, index) in slotProps.items" :key="item.id" class="col-12">
           <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3" :class="{ 'border-top-1 surface-border': item.id !== 0 }">
 
             <div class="md:w-10rem relative">
@@ -71,7 +67,7 @@ export default {
               <div class="flex flex-column md:align-items-end gap-5">
                 <span class="text-xl font-semibold text-900">${{ item.price }}</span>
                 <div class="flex flex-row-reverse md:flex-row gap-2">
-                  <pv-button icon="pi pi-shopping-cart" label="Add to Cart" :disabled="item.inventoryStatus === 'OUTOFSTOCK'" class="flex-auto md:flex-initial white-space-nowrap" @click="addBook(item.id)"></pv-button>
+                  <pv-button icon="pi pi-ban" label="Remove" severity="danger" @click="removeBook(index)"></pv-button>
                 </div>
               </div>
             </div>

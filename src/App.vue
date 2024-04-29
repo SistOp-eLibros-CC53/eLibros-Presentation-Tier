@@ -4,7 +4,6 @@ export default {
   name: "app",
   data() {
     return {
-      myCart: [],
     };
   }
 };
@@ -14,7 +13,6 @@ export default {
 <template>
   <pv-toast />
   <RouterView
-    myCart:="myCart"
   />
 </template>
 
