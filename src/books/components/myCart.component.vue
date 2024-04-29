@@ -28,7 +28,7 @@ export default {
       console.log(this.myCart_local);
       console.log(id);
       this.myCart_local.splice(id, 1);
-      this.toast.add({ severity: 'error', summary: 'Book Removed', detail: 'Message Detail', life: 3000 });
+      this.toast.add({ severity: 'error', summary: 'Book Removed', detail: 'Done Successfully', life: 3000 });
     }
   }
 };

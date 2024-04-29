@@ -30,7 +30,7 @@ const router = createRouter({
                 {
                     path: '/success/:id',
                     name: 'success',
-                    component: () => import('../books/components/payment.component.vue'),
+                    component: () => import('../books/components/success.component.vue'),
                     props: true,
                 },
             ]
