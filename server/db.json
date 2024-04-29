@@ -1,28 +1,86 @@
 {
-  "tutorials": [
+  "users": [
     {
       "id": 1,
-      "title": "The Vue Tutorials",
+      "user": "mku64",
+      "name": "Luis Eduardo Herrera",
+      "password": "barcapechofrio",
+      "image": "https://a.deviantart.net/avatars-big/m/k/mku64.jpg?4"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter and the Sorcerer’s Stone",
       "description": "The best tips and tutorials for Vue.",
-      "published": false
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"
     },
     {
       "id": 2,
-      "title": "Amazing Microsoft .NET",
-      "description": "Weekly tutorials about .NET and ASP.NET Core.",
-      "published": false
+      "title": "Harry Potter and the Chamber of Secrets",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/91WqeCn-PxL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
     },
     {
       "id": 3,
-      "title": "JavaScript for All",
-      "description": "Tips an tricks about JavaScript from scratch.",
-      "published": false
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/81NQA1BDlnL._AC_UF1000,1000_QL80_.jpg"
     },
     {
       "id": 4,
-      "title": "Vue Unleashed",
-      "description": "Vue at its best.",
-      "published": false
+      "title": "Harry Potter and the Goblet of Fire",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/513TQ4ihqqL.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Harry Potter and the Order of the Phoenix",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/71pgI2ou5oL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Harry Potter and the Half-Blood Prince",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/61sXBXmAWML._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Harry Potter and the Deathly Hallows",
+      "description": "The best tips and tutorials for Vue.",
+      "category": "Fiction",
+      "rating": 5,
+      "price": 15.00,
+      "image": "https://m.media-amazon.com/images/I/81aCMT1zKtL._AC_UF1000,1000_QL80_.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "user_id": 1,
+      "book_ids": [
+        1, 2, 3, 4
+      ],
+      "total_price": 80.00,
+      "date_transaction": "04/28/2024"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import router from 'vue-router'
+import router from './router'
 import ToastService from "primevue/toastservice";
 import PrimeVue from "primevue/config";
 // PrimeVue Material Design Theme
@@ -24,13 +24,17 @@ import Toast from "primevue/toast";
 import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
+import DataView from "primevue/dataview";
+import Badge from "primevue/badge";
 
 createApp(App)
     .use(router)
     .use(PrimeVue, {ripple: true})
     .use(ToastService)
     .component('pv-data-table', DataTable)
+    .component('pv-data-view', DataView)
     .component('pv-column', Column)
+    .component('pv-badge', Badge)
     .component('pv-toolbar', Toolbar)
     .component('pv-input-text', InputText)
     .component('pv-textarea', Textarea)
