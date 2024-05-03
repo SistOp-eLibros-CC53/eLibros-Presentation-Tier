@@ -9,16 +9,15 @@ export default {
     return {
       myCart_local: this.$props.myCart,
       books_in_cart: this.myCart_local,
-      statuses: [
-        {label: "Published", value: "published"},
-        {label: "Unpublished", value: "unpublished"},
-      ],
       booksApi: null,
+      myCart_price: 0,
       toast: useToast(),
     };
   },
   created() {
     this.booksApi = new BooksApiService();
+    this.myCart_price = 0;
+    this.myCart_local.forEach(elem => this.myCart_price += elem.price);
   },
   methods: {
     getDisplayableTutorial(book) {
@@ -29,17 +28,18 @@ export default {
       console.log(id);
       this.myCart_local.splice(id, 1);
       this.toast.add({ severity: 'error', summary: 'Book Removed', detail: 'Done Successfully', life: 3000 });
-    }
+    },
   }
 };
 </script>
 
 <template>
   <pv-toast/>
+  <label class="ml-2 mr-2 mt-3 block">Total Price: ${{myCart_price}}</label>
   <router-link
     :to="`/payment/${this.$route.params.id}`"
   >
-    <pv-button class="mt-2 " label="Pay Now" severity="info"></pv-button>
+    <pv-button class="ml-2 mt-3 " label="Pay Now" severity="info"></pv-button>
   </router-link>
   <pv-data-view :value="this.myCart_local">
     <template #list="slotProps">

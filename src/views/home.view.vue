@@ -2,11 +2,13 @@
 
 export default {
   name: "home",
+  props: ['id'],
   data() {
     return {
       myCart: [],
       drawer: false,
       items: [
+        { label: "Log-Out", to: '/' },
         { label: "Home", to: `/home/${this.$route.params.id}` },
         { label: "My Cart", to: `/my_cart/${this.$route.params.id}` },
       ],
@@ -20,11 +22,6 @@ export default {
   <header>
   <pv-toolbar class="bg-primary">
     <template #start>
-      <pv-button
-          class="p-button-text text-white"
-          icon="pi pi-bars"
-          @click="drawer = !drawer"
-      ></pv-button>
       <h3>eLibros</h3>
     </template>
     <template #end>
@@ -47,7 +44,7 @@ export default {
     </template>
   </pv-toolbar>
   </header>
-  <pv-sidebar v-model:visible="drawer"> </pv-sidebar>
+  <pv-sidebar v-model:visible="drawer"></pv-sidebar>
   <RouterView
       :myCart="myCart"
   />
