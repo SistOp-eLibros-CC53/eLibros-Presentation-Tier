@@ -44,11 +44,17 @@ export default {
       </div>
     </div>
 
-    <div class="col-6 h-screen align-items-center justify-content-center bg-gray-900 text-white">
+    <div class="container2 col-6 h-screen align-items-center justify-content-center bg-gray-900 text-white">
+      <img width="400" src="../../assets/images/logo2.PNG" alt="eLibros">
     </div>
   </div>
 </template>
 
-<style scoped>
-
+<style>
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* or any other height you want */
+}
 </style>
