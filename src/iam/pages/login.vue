@@ -47,7 +47,7 @@ export default {
     </div>
 
     <div class="container2 col-6 h-screen align-items-center justify-content-center bg-gray-900 text-white">
-      <img width="400" src="../../assets/images/logo2.PNG" alt="eLibros">
+      <img width="400" src="../../assets/images/logo2.png" alt="eLibros">
     </div>
   </div>
 </template>
