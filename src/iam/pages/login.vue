@@ -41,6 +41,8 @@ export default {
         </div>
 
         <pv-button label="Login" class="mt-2" @click="confirmUser"></pv-button>
+        <a href="http://191.239.120.67:8000" target="_blank"><pv-button severity="warning" label="Sign-Up" class="mt-2"></pv-button></a>
+
       </div>
     </div>
 
